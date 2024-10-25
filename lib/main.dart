@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ShowAIDev Manager',
+      title: 'ShowAI Manager',
       theme: ThemeData.dark().copyWith(
         primaryColor: Colors.blue,
         scaffoldBackgroundColor: Color(0xFF1A1A1A),
@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ShowAIDev Manager'),
+        title: Text('ShowAI Manager'),
         actions: [
           IconButton(
             icon: Icon(Icons.refresh),
