@@ -88,12 +88,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> handleSubmission(String id, {bool approve = false}) async {
     try {
-      final url = approve
-          ? 'https://showai.io.vn/api/submissions?_id=$id&action=add'
-          : 'https://showai.io.vn/api/submissions?_id=$id';
+      final url = 'https://showai.io.vn/api/submissions'; // URL đơn giản hơn
 
-      final response =
-          await http.get(Uri.parse(url)); // Thay đổi từ post sang get
+      final response = await http.patch(Uri.parse(url),
+          headers: {'Content-Type': 'application/json'},
+          body: json.encode(
+              {'submissionId': id, 'action': approve ? 'add' : 'delete'}));
 
       if (response.statusCode == 200) {
         ScaffoldMessenger.of(context).showSnackBar(
